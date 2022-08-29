@@ -1,0 +1,47 @@
+.main-content{
+    padding-bottom: 20%;
+    position: fixed;
+}
+
+a{
+    font-size: 13pt;
+    color: #1e2023;
+    text-decoration: none;
+}
+
+a:hover{
+    color: #ffc409;
+}
+
+.error{
+    color:red;
+    background-color: white;
+    text-align: center;
+    margin: 15px;
+}
+
+.register{
+    color:#ffc409;
+    font-size: 14pt;
+}
+
+ion-text{
+    color: #1e2023;
+}
+
+.password{
+    text-align: end;
+    margin: 0px 40px;
+    padding-top: 0;
+}
+
+.logo{
+    text-align: inherit;
+}
+
+h4{
+    padding: 0;
+    margin: 0;
+    font-family: verdana;
+}
+

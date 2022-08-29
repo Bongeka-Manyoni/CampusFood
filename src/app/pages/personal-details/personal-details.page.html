@@ -1,0 +1,63 @@
+<ion-header>
+  <div class="toolbar">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-icon name="chevron-back" (click)="goBack()"></ion-icon>
+      </ion-buttons>
+
+      <div class="header">
+        <ion-title>Personal Info</ion-title>
+        <ion-icon name="log-out" (click)="logOut()"></ion-icon>
+      </div>
+    </ion-toolbar>
+  </div>
+  
+</ion-header>
+
+<ion-content>
+  <div class="main-content">
+    <div class="picture">
+      <ion-avatar>
+        <ion-img src="{{loggedUser.userImage}}"></ion-img>
+        <ion-label>
+          <ion-icon name="camera"></ion-icon>
+          <input type="file" id="file-input" [(ngModel)]="cust.image" accept=".jpeg,.jpg,.png" (change)="upLoad($event)">
+        </ion-label>
+      </ion-avatar>
+    </div>
+    
+    <div class="user-info">
+      <!--name field-->
+      <ion-icon name="person"></ion-icon>
+        <ion-label>Name</ion-label><br/>
+      <ion-item>
+        <ion-input type="text" disabled value="{{loggedUser.Name}}"></ion-input>
+      </ion-item>
+
+      <!--surname field-->
+      <ion-icon name="person"></ion-icon>
+        <ion-label>Surname</ion-label><br/>
+        <ion-item>
+          <ion-input type="text" value="{{loggedUser.Surname}}" disabled></ion-input>
+        </ion-item>
+      
+      <!--name field-->
+      <ion-icon name="mail"></ion-icon>
+      <ion-label>Email Address</ion-label>
+      <ion-item>
+        <ion-input type="email" disabled value="{{loggedUser.Email}}"></ion-input>
+      </ion-item>
+
+      <!--contact number field-->
+      <ion-icon name="call"></ion-icon>
+      <ion-label>Contact Number</ion-label><br/>
+      <ion-item>
+        <ion-input type="tel" [(ngModel)]="cust.contact" pattern="^((?:\+27|27)|0)(\d{2})-?(\d{3})-?(\d{4})$" value="{{loggedUser.Contact}}"></ion-input>
+      </ion-item>
+      
+    </div>
+
+    <ion-button (click)="updateContact()" expand="block">Update</ion-button>
+  </div>
+</ion-content>
+  

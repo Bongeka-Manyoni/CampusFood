@@ -1,0 +1,52 @@
+<ion-header>
+  <div class="toolbar">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-icon name="chevron-back" (click)="goBack()"></ion-icon>
+      </ion-buttons>
+
+      <div class="header">
+        <ion-title>Order {{orderDetails.OrderNumber}}</ion-title>
+        <ion-icon name="log-out" (click)="logOut()"></ion-icon>
+        <ion-badge>{{cartLength}}</ion-badge>
+      </div>
+    </ion-toolbar>
+  </div>
+</ion-header>
+
+<ion-content>
+  <div class="main-content">
+    
+    <ion-item>
+      <ion-col>Date: </ion-col>
+      <ion-col><i><strong>{{orderDetails.Date}}</strong></i></ion-col>
+    </ion-item>
+
+    <ion-item>
+      <ion-col>Time: </ion-col>
+      <ion-col><i><strong>{{orderDetails.Time}}</strong></i></ion-col>
+    </ion-item>
+
+    <ion-item>
+      <ion-col>Order Status: </ion-col>
+      <ion-col><i><strong>{{orderDetails.Status}}</strong></i></ion-col>
+    </ion-item>
+
+    <ion-item>
+      <ion-col>Paid using: </ion-col>
+      <ion-col><i><strong>{{orderDetails.PaymentMethod}}</strong></i></ion-col>
+    </ion-item>
+
+    <ion-item>
+      <ion-col>{{orderDetails.DeliveryMethod}} Location: </ion-col>
+      <ion-col><i><strong>{{orderDetails.deliveryLocation}}</strong></i></ion-col>
+    </ion-item>
+
+    <ion-slides [options]="slideOpts">
+      <ion-slide *ngFor="let item of orderDetails.OrderItems">
+        <ion-img src="{{item.foodImage}}"></ion-img><br/>
+        <ion-label>{{item.foodName}}</ion-label>
+      </ion-slide>
+    </ion-slides>
+  </div>
+</ion-content>

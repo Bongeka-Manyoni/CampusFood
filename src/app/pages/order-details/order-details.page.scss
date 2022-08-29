@@ -1,0 +1,41 @@
+.header{
+    margin: 0% auto 0% auto;
+    display: flex;
+    
+}
+
+.main-content{
+    padding: 0;
+    margin: 0;
+    text-align: start;
+}
+h4{
+    font-weight: bold;
+    margin-left: 10%;
+}
+
+ion-img{
+    width: 80px;
+    height: 80px;
+}
+
+ion-item{
+    padding: 0;
+    margin: 10px 15px;
+    border: none;
+    color: #1e2023;
+}
+
+ion-card{
+    margin-top: 10px;
+}
+
+ion-card-content{
+    display: flex;
+
+    ion-card-title{
+        text-align: center;
+        margin-top: 20%;
+    }
+}
+

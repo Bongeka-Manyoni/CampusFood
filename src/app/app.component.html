@@ -1,0 +1,55 @@
+<ion-app>
+  <ion-split-pane contentId="main-content">
+    <ion-menu contentId="main-content" type="overlay" >
+      <ion-content>
+        <ion-menu-toggle auto-hide="true">
+          
+          <div class="logo">
+            <ion-img src="assets/images/CFood-logo.png"></ion-img>
+          </div>
+          <!-- Display the logged in user's name , surname and e-mail address-->
+          <ion-list class="user-details">
+            <h2 routerLink="/my-profile">{{loggedUser.Name}} {{loggedUser.Surname}}</h2>
+            <ion-label>{{userEmail}}</ion-label><br/>
+          </ion-list>
+
+          <!-- Navigates to the user's profile page-->
+          <ion-item lines="none">
+            <ion-icon slot="start" name="person-outline"></ion-icon>
+            <ion-label routerLink="/my-profile">My Profile</ion-label>
+          </ion-item>
+
+          <!-- Navigates to the order history of the user-->
+          <ion-item lines="none">
+            <ion-icon slot="start" name="bag-check-outline"></ion-icon>
+            <ion-label routerLink="/order-history">Order History</ion-label>
+          </ion-item>
+
+          <!-- Navigates to the help page-->
+          <ion-item lines="none">
+            <ion-icon slot="start" name="help-outline"></ion-icon>
+            <ion-label>Help</ion-label>
+          </ion-item>
+
+          <!-- Navigates to the about page -->
+          <ion-item lines="none" routerLink="/about">
+            <ion-icon slot="start" name="information-outline"></ion-icon>
+            <ion-label >About</ion-label>
+          </ion-item>
+
+          <ion-item lines="none" (click)="emailOpen()">
+            <ion-icon slot="start" name="mail-outline"></ion-icon>
+            <ion-label>Equiries</ion-label>
+          </ion-item>
+
+          <!-- Logs the user out of the application-->
+          <ion-item lines="none">
+            <ion-icon slot="start" name="log-out-outline"></ion-icon>
+            <ion-label (click)="logOut()">Logout</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

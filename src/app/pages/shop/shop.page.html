@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <div class="header">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+        <ion-img src="assets/images/CFood-logo.png"></ion-img>
+        
+        <div class="cart">
+          <ion-icon name="cart-outline" routerLink="/my-cart"></ion-icon>
+          <ion-badge color="dark">{{cartLength}}</ion-badge>
+        </div>
+      </ion-buttons>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  
+  <div class="searchbar">
+    <ion-searchbar placeholder="Search item" [(ngModel)]="search" animated="true"></ion-searchbar>
+  </div>
+
+  <div class="number-of-items">
+    <h3>Categories</h3>
+    <ion-slides [options]="slideOpts">
+      <ion-slide class="category"  *ngFor="let cat of slideshow">
+        <ion-card>
+          <ion-card-content (click)="selectedCategory(cat.cat_id)">
+            <ion-label>{{cat.cat_description}}</ion-label>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+  </div>
+  
+  <div class="menu">
+    <h3>Available</h3>
+
+    <ion-row style="text-align: start;">
+      <ion-card style="width:43%;" *ngFor="let food of menu | filter:search">
+        <ion-col style="text-align:center;"><ion-img src="{{food.menuImage}}" (click)="viewMeal(food)"></ion-img></ion-col>
+          <ion-col>
+            <h5>{{food.menu_name}}</h5>
+          </ion-col>
+            
+          <ion-col>
+            <ion-label color="dark">R{{food.menu_price}}</ion-label>
+            <div class="cart">
+              <ion-icon (click)="addCart(food.menuImage,food.menu_name,food.menu_price,food.prepTime)" name="cart-outline" style="zoom: 1.5 ;"></ion-icon>
+            </div>
+            
+          </ion-col>
+      </ion-card>
+    </ion-row>
+    
+    
+  </div>
+</ion-content>

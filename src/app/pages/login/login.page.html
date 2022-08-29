@@ -1,0 +1,25 @@
+<ion-content>
+  <div class="main-content">
+    <br/><br/>
+    <h4>Welcome back</h4>
+
+    <div class="error">
+      {{errorMsg}}
+    </div>
+      <ion-item>
+        <ion-icon name="mail"></ion-icon>
+        <ion-col><ion-input type="email" placeholder="Email address" required="required" id="email" [(ngModel)]="cust.email"></ion-input></ion-col>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="key"></ion-icon>
+        <ion-col><ion-input type="password" placeholder="Password" required="required" id="password" [(ngModel)]="cust.password"></ion-input></ion-col>
+      </ion-item>
+    
+      <div class="password">
+        <a routerLink="/password">Reset Password</a>
+      </div>
+      
+      <ion-button expand="block" (click)="login(cust.email)">Login</ion-button>
+  </div>
+</ion-content>

@@ -1,0 +1,38 @@
+ion-tab-bar{
+    --background: #1e2023;
+}
+
+.logo{
+    background: #ffcc00;
+    height: 32%;
+    ion-img{
+        width: 300px;
+        margin: 0% auto 0% auto;
+    }
+}
+
+.main-content{
+    border: none;
+    padding: 0;
+    margin: 0;
+    height: 109vh;
+}
+
+ion-content{
+    padding: -90px;
+    margin: -90px;
+}
+
+.tab-selected{
+    h4{
+        color: #ffcc00;
+    }
+    
+    border-bottom: 2px solid #ffcc00;
+}
+
+h4{
+    color: white;
+    font-family: verdana;
+    font-weight: bold;
+}

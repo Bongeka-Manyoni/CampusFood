@@ -1,0 +1,41 @@
+<ion-header>
+  <div class="toolbar">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-icon name="chevron-back" (click)="goBack()"></ion-icon>
+      </ion-buttons>
+
+      <div class="header">
+        <ion-title>Product</ion-title>
+      </div>
+    </ion-toolbar>
+  </div>
+</ion-header>
+
+<ion-content>
+  <div class="main-content" >
+    <div class="item-image">
+      <ion-img src="{{item.menuImage}}"></ion-img>
+    </div>
+
+    <h1>{{item.menu_name}}</h1>
+    <h2>R{{totalAmount}}</h2>
+
+    <h3>Ingredients</h3>
+    <p>{{item.ingredients}}</p>
+    
+    <div class="quantity">
+      <h3>Quantity:</h3>
+      <ion-icon name="add-circle" (click)="increaseQty()"></ion-icon> <br/>
+      <ion-label>{{quantity}}</ion-label> <br/>
+      <ion-icon name="remove-circle" class="decreaseBtn" (click)="decreaseQty()"></ion-icon>
+    </div>
+  </div>
+  
+</ion-content>
+
+<ion-footer>
+  <div class="toCart-button">
+    <ion-button expand="block" (click)="addCart(item.menuImage,item.menu_name,item.prepTime)">ADD TO CART</ion-button>
+  </div>
+</ion-footer>

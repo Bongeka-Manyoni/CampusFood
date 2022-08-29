@@ -1,0 +1,69 @@
+<ion-header>
+  <div class="toolbar">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-icon name="chevron-back" (click)="goBack()"></ion-icon>
+      </ion-buttons>
+
+      <div class="header">
+        <ion-title>Order Details</ion-title>
+        <ion-icon name="log-out" (click)="logOut()"></ion-icon>
+        <ion-badge>{{cartLength}}</ion-badge>
+      </div>
+    </ion-toolbar>
+  </div>
+</ion-header>
+
+<ion-content>
+  <div class="main-content">
+    
+    <ion-item>
+      <ion-col>Order: </ion-col>
+      <ion-col><i><strong>{{orderDetails.OrderNumber}}</strong></i></ion-col>
+    </ion-item>
+
+    <ion-item>
+      <ion-col>Order Date: </ion-col>
+      <ion-col><i><strong>{{orderDetails.Date}}</strong></i></ion-col>
+    </ion-item>
+
+    <ion-item>
+      <ion-col>Order Time: </ion-col>
+      <ion-col><i><strong>{{orderDetails.Time}}</strong></i></ion-col>
+    </ion-item>
+
+    <ion-item>
+      <ion-col>Order Status: </ion-col>
+      <ion-col><i><strong>{{orderDetails.Status}}</strong></i></ion-col>
+    </ion-item>
+
+    <ion-item>
+      <ion-col>Payment Method: </ion-col>
+      <ion-col><i><strong>{{orderDetails.PaymentMethod}}</strong></i></ion-col>
+    </ion-item>
+
+    <ion-item>
+      <ion-col>Collection Method: </ion-col>
+      <ion-col><i><strong>{{orderDetails.DeliveryMethod}}</strong></i></ion-col>
+    </ion-item>
+
+    <ion-item>
+      <ion-col>Collection Location: </ion-col>
+      <ion-col><i><strong>{{orderDetails.deliveryLocation}}</strong></i></ion-col>
+    </ion-item>
+
+    <h4>Order Items</h4>
+    <ion-item *ngFor="let item of orderDetails.OrderItems">
+        <ion-col><ion-img src="{{item.foodImage}}"></ion-img></ion-col>
+        <ion-col>{{item.foodName}}</ion-col>
+    </ion-item>
+
+    
+    <ion-item>
+      <ion-col>Total Amount: </ion-col>
+      <ion-col><i><strong> R {{orderDetails.TotalAmount}}</strong></i></ion-col>
+    </ion-item>
+
+    <ion-button expand="block" (click)="cancelOrder()">Cancel Order</ion-button>
+  </div>
+</ion-content>

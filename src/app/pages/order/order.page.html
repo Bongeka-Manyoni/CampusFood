@@ -1,0 +1,47 @@
+<ion-header>
+  <div class="toolbar">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-icon name="chevron-back" (click)="goBack()"></ion-icon>
+      </ion-buttons>
+
+      <div class="header">
+        <ion-title>My Order</ion-title>
+        <ion-icon name="log-out" (click)="logOut()"></ion-icon>
+        <ion-badge>{{cartLength}}</ion-badge>
+      </div>
+    </ion-toolbar>
+  </div>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div class="main-content" *ngFor="let order of orders">
+     
+    <ion-card >
+      <ion-card-header>
+        {{order.Date}} | {{order.Time}} <br/><br/>
+        Order {{order.OrderNumber}} ready at: <strong>{{order.OrderTime}}</strong>
+      </ion-card-header>
+      <ion-card-content>
+        <h4> <br/>
+          <ion-label>Order Status: <strong>{{order.Status}}</strong></ion-label>
+          <br/><br/>
+          <ion-label>Total Amount: <strong>R {{order.TotalAmount}}</strong>
+             |    Payment: {{order.PaymentMethod}} </ion-label>
+        </h4>
+        <br/>
+        <h2>Items: </h2>
+        <h5 *ngFor="let item of order.OrderItems">
+          <ion-label>{{item.foodName}}</ion-label>
+        </h5>
+        <div class="extra">
+          <a (click)="viewOrder(order)" target="parent">Order Details</a>
+        <ion-icon (click)="addToOrder(order)" style="zoom: 3;" name="add-circle-outline"></ion-icon>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

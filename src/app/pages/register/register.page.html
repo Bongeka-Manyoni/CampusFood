@@ -1,0 +1,31 @@
+<ion-content>
+  <div class="main-content">
+
+    <ion-item>
+        <ion-icon name="person"></ion-icon>
+        <ion-col><ion-input type="text" placeholder="Name" required="required" [(ngModel)]="cust.name"></ion-input></ion-col>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="person"></ion-icon>
+        <ion-col><ion-input type="text" placeholder="Surname" required="required" [(ngModel)]="cust.surname"></ion-input></ion-col>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="mail"></ion-icon>
+        <ion-col><ion-input type="email" placeholder="Email address" required="required"[(ngModel)]="cust.email"></ion-input></ion-col>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="call"></ion-icon>
+        <ion-col><ion-input type="tel" placeholder="Contact number" required="required" maxLength="10" minLength="10" [(ngModel)]="cust.contact" pattern="^((?:\+27|27)|0)(\d{2})-?(\d{3})-?(\d{4})$"></ion-input></ion-col>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="lock-closed"></ion-icon>
+        <ion-col><ion-input type="password" placeholder="Password" required="required" minLength="6" [(ngModel)]="cust.password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[ -/:-@\[-`{-~]).{6,64}$"></ion-input></ion-col>
+      </ion-item>
+      
+      <ion-button expand="block" (click)="register()">Register</ion-button>
+  </div>
+</ion-content>

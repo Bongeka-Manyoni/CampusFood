@@ -1,0 +1,109 @@
+<ion-header>
+  <div class="toolbar">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-icon name="chevron-back" (click)="goBack()"></ion-icon>
+      </ion-buttons>
+
+      <div class="header">
+        <ion-title>About Us</ion-title>
+        <ion-icon name="log-out" (click)="logOut()"></ion-icon>
+      </div>
+    </ion-toolbar>
+  </div>
+  
+</ion-header>
+
+<ion-content>
+  <div class="main-content">
+    <ion-card>
+      <ion-card-title><h1>What is CampusFood?</h1></ion-card-title>
+
+      <!--About CampusFood informartion-->
+      <ion-card-content>
+        <p>
+          Food is almost synonymous with education. CampusFood is a company that delivers delicious
+          campus cafeteria food to people across campuses in South Africa. More than that we are about
+          the people. <br/> Our journey began as students at Mut who just were frustrated with physically 
+          getting food from the cafeteria on campus with no other option.
+        </p>
+      </ion-card-content>
+    </ion-card>
+
+    <!--CampusFood contact details-->
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title><h1>Contact informartion</h1></ion-card-title>
+      </ion-card-header>
+      
+      <ion-card-content>
+        <p>
+          To enquire or address any concerns with us, please use the email address provided below<br/>
+          <a (click)="emailOpen()">theincredibles173@gmail.com</a> <br/>
+          We address whatever communication brought to us within a day.
+        </p>
+      </ion-card-content>
+    </ion-card>
+
+    <!--CampusFood policy information-->
+    <ion-card>
+      <h1 style="font-size:24pt;text-decoration: none;">Our Privacy Policy</h1>
+      <ion-card-header>
+        <ion-card-title><h1>Personal Informartion We Collect: </h1></ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <p>
+          We collects several types of information regarding our users : We collects personally
+          identifiable information from our users. <br/> The personal information collected by us
+          mainly consists of Contact Details (i.e. Email Contact Number), Personal Details
+          (i.e. User Name), Billing Details (i.e. Physical Billing address, Payment Method, Transaction
+          Details). <br/> We collect information so that you can place order, request information and
+          support and make  product suggestions. <br/> Our mobile application use forms to collects
+          information. We receive and store your information you enter on our mobile applications. 
+        </p>
+      </ion-card-content>
+
+      <ion-card-header>
+        <ion-card-title><h1>How We Use The Information We Collect: </h1></ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <p>
+          Information will be used to process your order and to manage your account. We will use your 
+          information to contact you in response of your suggestion or query, regarding the functionality 
+          changes to our products, any special offers which will be suitable to you and changes in Privacy Policy.
+        </p>
+      </ion-card-content>
+
+      <ion-card-header>
+        <ion-card-title><h1>Security: </h1></ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <p>
+          We believe the security of your information is a serious issue and we are committed to protecting 
+          the information we receive from you. We take precautions to protect your information. <br/> We use
+          security measures to protect against the loss, misuse or alteration of the information under our
+          control. <br/> When you submit sensitive information via website or application, your information is
+          protected both online and offline.
+        </p>
+      </ion-card-content>
+
+      <ion-card-header>
+        <ion-card-title><h1>Changes in Privacy Policy: </h1></ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <p>
+          We reserve all rights to modify this Privacy Policy at any time according to our need. Our Privacy 
+          Policy may changes from time to time and all updates will be posted on this Website. <br/> Our 
+          Privacy Policy may be change according to changes in law, our features and services, advances in 
+          technology. Please visit our Privacy Policy page with periods of time for update in Privacy Policy. 
+          <br/> Please review our Privacy Policy carefully. Our continued use of the Services following the
+          posting of changes to Privacy Policy will constitute your consent and acceptance of those changes.
+        </p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

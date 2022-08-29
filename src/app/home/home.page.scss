@@ -1,0 +1,39 @@
+.tab-selected{
+    border-top: 3px solid #1e2023;
+    ion-icon{
+      color: #1e2023;
+    }
+}
+
+ion-badge{
+  --background: #1e2023;
+}
+
+ion-tab-button{
+  ion-icon{
+    border: none;
+    text-align: center;
+    margin-left: 10px;
+    color: #1e2023;
+    font-size: 20pt;;
+  }
+} 
+
+ion-tab-bar{
+  --background: #ffcc00;
+}
+
+ion-header {
+  overflow: hidden;
+}
+
+ion-tabs{
+  background: white;
+  overflow: hidden;
+}
+
+ion-slides{
+  margin-top:20px;
+}
+
+

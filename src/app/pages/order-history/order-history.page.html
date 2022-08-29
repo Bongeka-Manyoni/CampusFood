@@ -1,0 +1,32 @@
+<ion-header>
+  <div class="toolbar">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-icon name="chevron-back" (click)="goBack()"></ion-icon>
+      </ion-buttons>
+
+      <div class="header">
+        <ion-title>Order History</ion-title>
+        <ion-icon name="log-out" (click)="logOut()"></ion-icon>
+        <ion-badge>{{cartLength}}</ion-badge>
+      </div>
+    </ion-toolbar>
+  </div>
+</ion-header>
+
+<ion-content>
+  <div class="main-content">
+    <ion-card *ngFor="let order of orders">
+      <ion-card-content>
+        <ion-item>
+          <ion-col>
+            <strong>Order {{order.OrderNumber}}</strong><br/>
+          <ion-note *ngFor="let item of order.OrderItems">{{item.foodName}}<br/></ion-note>
+          </ion-col>
+          <a slot="end" (click)="viewOrder(order)">View</a>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
+

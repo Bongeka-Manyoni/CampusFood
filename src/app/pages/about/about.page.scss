@@ -1,0 +1,31 @@
+.main-content{
+    border: none;
+    padding: 0;
+}
+
+ion-header{
+    overflow: hidden;
+    //--background: #1e2023;
+}
+
+.header{
+    margin: 0% auto 0% auto;
+    display: flex;
+}
+
+p{
+    font-size: 16px;
+    text-align: start;
+    margin-left: 10px;
+}
+
+h1{
+    color: #1e2023;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+a{
+    color: rgb(10, 108, 165);
+    text-decoration: underline;
+}

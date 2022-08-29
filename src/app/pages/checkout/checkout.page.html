@@ -1,0 +1,130 @@
+<ion-header>
+  <div class="toolbar">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-icon name="chevron-back" (click)="goBack()"></ion-icon>
+      </ion-buttons>
+
+      <div class="header">
+        <ion-title>Checkout</ion-title>
+        <ion-icon name="log-out" (click)="logOut()"></ion-icon>
+        <ion-badge>{{cartLength}}</ion-badge>
+      </div>
+    </ion-toolbar>
+  </div>
+</ion-header>
+
+<ion-content>
+  <div class="main-content">
+    <div class="delivery">
+      <h3>Delivery</h3>
+      <ion-card>
+        <ion-note>Please note that deliveries are only made on-campus.</ion-note>
+        <ion-card-content>
+          <ion-radio-group [(ngModel)]="collect.method" value="collection" (ionChange)="deliveryOption($event)">
+            <ion-item id="delivery">
+              <ion-label>Delivery</ion-label>
+              <ion-radio slot="start" value="Delivery"></ion-radio>
+              <ion-popover trigger="delivery" triggerAction="click">
+                <ng-template>
+                  <ion-content>
+                    <ion-select placeholder="Select delivery location" (ionChange)="getLocation($event)" [(ngModel)]="collect.location">
+                      <ion-select-option value="Nkandla res: main gate">Nkandla res: main gate</ion-select-option>
+                      <ion-select-option value="Main res: main gate">Main res: main gate</ion-select-option>
+                      <ion-select-option value="Step 1">Step 1</ion-select-option>
+                      <ion-select-option vale="Step 2">Step 2</ion-select-option>
+                      <ion-select-option vale="Step 3">Step 3</ion-select-option>
+                      <ion-select-option vale="Step 4">Step 4</ion-select-option>
+                      <ion-select-option vale="Step 5">Step 5</ion-select-option>
+                      <ion-select-option vale="Step 6">Step 6</ion-select-option>
+                      <ion-select-option vale="Step 7">Step 7</ion-select-option>
+                      <ion-select-option vale="Examination centre">Examination centre</ion-select-option>
+                      <ion-select-option vale="D-Labs: D8">D-Labs: D8</ion-select-option>
+                      <ion-select-option vale="Resource/Library foyer">Resource/Library foyer</ion-select-option>
+                      <ion-select-option vale="Campus clinic foyer">Campus clinic foyer</ion-select-option>
+                      <ion-select-option vale="SRC office">SRC office</ion-select-option>
+                      <ion-select-option vale="ICT department offices">ICT department offices</ion-select-option>
+                      <ion-select-option vale="Civil engineering offices">Civil engineering department offices</ion-select-option>
+                      <ion-select-option vale="Chemical engineering offices">Chemical engineering department offices</ion-select-option>
+                      <ion-select-option vale="Electrical engineering offices">Electrical engineering department offices</ion-select-option>
+                      <ion-select-option vale="Mechanical engineering offices">Mechanical engineering department offices</ion-select-option>
+                      <ion-select-option vale="HR offices">HR department offices</ion-select-option>
+                      <ion-select-option vale="Public Admin offices">Public Admin department offices</ion-select-option>
+                      <ion-select-option vale="Protection services">Protection services</ion-select-option>
+                    </ion-select>
+                  </ion-content>
+                </ng-template>
+              </ion-popover>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Pick-up</ion-label>
+              <ion-radio slot="start" value="Pick-up"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+    <div class="payment-method">
+      <h3>Payment Method</h3>
+      <ion-card>
+        <ion-card-content>
+          <ion-radio-group [(ngModel)]="pay.method" (ionChange)="paymentMethod($event)" value="collection">
+            <ion-item>
+              <ion-label>Cash on {{collect.method}}</ion-label>
+              <ion-radio slot="start" value="Cash"></ion-radio>
+              <ion-icon name="cash-outline"></ion-icon>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Card</ion-label>
+              <ion-radio slot="start" value="Card"></ion-radio>
+              <ion-icon name="card-outline"></ion-icon>
+            </ion-item>
+          </ion-radio-group>
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+    <div class="order-summary">
+      <h3>Order Summary</h3>
+      <ion-card>
+        <ion-card-content>
+          <ion-item>
+            <ion-label>Subtotal: </ion-label>
+            <h2>R {{subTotal}}</h2>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Delivery fee: </ion-label>
+            <h2>R {{deliveryAmount}}</h2>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Total amount: </ion-label>
+            <h2>R {{totalAmount}}</h2>
+          </ion-item>
+        </ion-card-content>
+
+        <div class="order-items">
+          <h3>Items</h3>
+          <!--<ion-card>
+            <ion-card-content >-->
+              <ion-item *ngFor="let item of cartItems">
+                <ion-img src="{{item.foodImage}}"></ion-img>
+                <ion-col><h5>{{item.foodName}}</h5></ion-col>
+                <ion-col><h5>x {{item.quantity}}</h5></ion-col>
+                <ion-col id="price"><h5>R{{item.foodPrice}}</h5></ion-col>
+              </ion-item>
+            <!--</ion-card-content>
+          </ion-card>-->
+        </div>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-button expand="block" (click)="confirmOrder()">Confirm & place Order</ion-button>
+</ion-footer>

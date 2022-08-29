@@ -1,0 +1,44 @@
+.header{
+    margin: 0% auto 0% auto;
+    display: flex;
+}
+
+a{
+    font-size: 18px;
+    font-weight: bold;
+    color: #1e2023;
+    margin-top: 10px;
+}
+
+a:hover{
+    color: #ffcc00;
+    font-size: bold;
+    cursor: pointer;
+}
+
+.extra{
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+ion-card-header{
+    border-bottom: 1px solid;
+}
+
+.main-content{
+    text-align: start;
+    ion-label{
+        font-size: 16px;
+    }
+    ion-button{
+        font-weight: bold;
+    }
+}
+
+ion-img{
+    width: 70px;
+}
+
+
+

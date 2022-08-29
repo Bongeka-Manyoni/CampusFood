@@ -1,0 +1,53 @@
+<ion-header>
+  <div class="toolbar">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-icon name="chevron-back" (click)="goBack()"></ion-icon>
+      </ion-buttons>
+
+      <div class="header">
+        <ion-title>My Cart</ion-title>
+        <ion-icon name="cart-outline"></ion-icon>
+        <ion-badge>{{cartLength}}</ion-badge>
+      </div>
+    </ion-toolbar>
+  </div>
+  
+</ion-header>
+
+<ion-content>
+  <div class="main-content">
+    <ion-item-sliding *ngFor="let cart of cartItems">
+      <!--<ion-card>-->
+        
+        <ion-item>
+          <ion-col><ion-img src="{{cart.foodImage}}"></ion-img></ion-col>
+          <ion-row>
+            <ion-col>
+              {{cart.foodName}} <br/><br/>
+              R{{cart.foodPrice}} <br/>
+            </ion-col>
+          </ion-row><br/>
+
+          <ion-item slot="end" id="quantity">
+            <ion-icon name="add-circle" (click)="increaseQty(cart.cartId)"></ion-icon> <br/>
+            <ion-label>{{cart.quantity}}</ion-label> <br/>
+            <ion-icon name="remove-circle" class="decreaseBtn" (click)="decreaseQty(cart.cartId)"></ion-icon>
+          </ion-item>
+        </ion-item>
+
+        <ion-item-options side="end">
+          <ion-item-option>
+            <ion-icon name="trash" (click)="deleteItem(cart.cartId)" style="zoom: 1.8;"></ion-icon>
+          </ion-item-option>
+        </ion-item-options>
+      <!--</ion-card>-->
+    </ion-item-sliding>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <div class="checkout">
+    <ion-button expand="block" (click)="checkout()">Checkout</ion-button>
+  </div>
+</ion-footer>

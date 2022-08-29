@@ -1,0 +1,31 @@
+<ion-header>
+  <div class="toolbar">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-icon name="chevron-back" (click)="goBack()"></ion-icon>
+      </ion-buttons>
+
+      <div class="header">
+        <ion-title>Add to order</ion-title>
+      </div>
+    </ion-toolbar>
+  </div>
+</ion-header>
+
+<ion-content>
+  <div class="main-content">
+    <ion-row>
+      <ion-card style="width:43%;" *ngFor="let food of menu">
+        <ion-col style="text-align:center;"><ion-img src="{{food.menuImage}}"></ion-img></ion-col>
+          <ion-col>
+            <h5>{{food.menu_name}}</h5>
+          </ion-col>
+            
+          <ion-col>
+            <ion-label color="dark">R{{food.menu_price}}</ion-label>
+            <ion-button (click)="addOrder(food.menuImage,food.menu_price,food.menu_name)">Add</ion-button>
+          </ion-col>
+        </ion-card>
+    </ion-row>
+  </div>
+</ion-content>
